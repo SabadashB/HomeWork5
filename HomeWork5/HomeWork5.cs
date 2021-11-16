@@ -16,32 +16,12 @@ namespace HomeWork5
 
         public static int ArrayMin(int[] A)
         {
-            int min = 0;
-            min = A[0];
-            for (int i = 0; i < A.Length; i++)
-            {
-                if (A[i] < min)
-                {
-                    min = A[i];
-                }
-            }
-
-            return min;
+            return A[ArrayMinID(A)];
         }
 
         public static int ArrayMax(int[] A)
         {
-            int max = 0;
-            max = A[0];
-            for (int i = 0; i < A.Length; i++)
-            {
-                if (A[i] > max)
-                {
-                    max = A[i];
-                }
-            }
-
-            return max;
+            return A[ArrayMaxID(A)];
         }
 
         public static int ArrayMinID(int[] A)
