@@ -4,7 +4,7 @@ namespace HomeWork5
 {
     public class HomeWork5
     {
-        private static void ArrayGenerate(ref int[] A, int size)
+       private static void ArrayGenerate(ref int[] A, int size)
         {
             A = new int[size];
             Random random = new Random();
@@ -26,14 +26,11 @@ namespace HomeWork5
 
         public static int ArrayMinID(int[] A)
         {
-            int min = 0;
             int minID = 0;
-            min = A[0];
             for (int i = 0; i < A.Length; i++)
             {
-                if (A[i] < min)
+                if (A[i] < A[int.MaxValue])
                 {
-                    min = A[i];
                     minID = i;
                 }
             }
@@ -43,14 +40,11 @@ namespace HomeWork5
 
         public static int ArrayMaxID(int[] A)
         {
-            int max = 0;
             int maxID = 0;
-            max = A[0];
             for (int i = 0; i < A.Length; i++)
             {
-                if (A[i] > max)
+                if (A[i] > A[int.MinValue])
                 {
-                    max = A[i];
                     maxID = i;
                 }
             }
@@ -63,7 +57,7 @@ namespace HomeWork5
             int sum = 0;
             for (int i = 0; i < A.Length; i++)
             {
-                if (i % 2 != 0)
+                if (i % 2 == 1)
                 {
                     sum += A[i];
                 }
@@ -76,7 +70,7 @@ namespace HomeWork5
         {
             int i = 0;
             int j = A.Length - 1;
-            while (i < j)
+            for (i = 0; i < j; i++)
             {
                 int temp = A[i];
                 A[i] = A[j];
@@ -84,7 +78,6 @@ namespace HomeWork5
                 i++;
                 j--;
             }
-
             return A;
         }
 
@@ -106,7 +99,7 @@ namespace HomeWork5
         {
             int count1 = 0;
             int count2 = (A.Length + 1) / 2;
-            while (count2 < A.Length)
+            for (int i = count2; i < A.Length; i++)
             {
                 int temp = A[count1];
                 A[count1] = A[count2];
@@ -114,7 +107,6 @@ namespace HomeWork5
                 count1++;
                 count2++;
             }
-
             return A;
         }
 
@@ -122,7 +114,7 @@ namespace HomeWork5
         {
             for (int i = 0; i < A.Length; i++)
             {
-                for (int j = i + 1; j < A.Length; j++)
+                for (int j = i + 1; j < A.Length - 1; j++)
                 {
                     if (A[i] > A[j])
                     {
