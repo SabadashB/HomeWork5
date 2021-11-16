@@ -29,7 +29,7 @@ namespace HomeWork5
             int minID = 0;
             for (int i = 0; i < A.Length; i++)
             {
-                if (A[i] < A[int.MaxValue])
+                if (A[i] < minID)
                 {
                     minID = i;
                 }
@@ -43,7 +43,7 @@ namespace HomeWork5
             int maxID = 0;
             for (int i = 0; i < A.Length; i++)
             {
-                if (A[i] > A[int.MinValue])
+                if (A[i] > maxID)
                 {
                     maxID = i;
                 }
